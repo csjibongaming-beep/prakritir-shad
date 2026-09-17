@@ -1,172 +1,1139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>প্রকৃতির স্বাদ — প্রাকৃতিক খাবারের দোকান</title>
-<meta name="description" content="মধু, হানিনাট, কাজুবাদাম, কাঠবাদাম, খেজুর ও খেজুরের গুড়ের অনলাইন দোকান।">
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans Bengali",system-ui,sans-serif;background:#fffaf2;color:#332316}
-.top{background:#4b2d14;color:#fff;padding:8px;text-align:center;font-size:13px}
-header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid #eee2d0;padding:13px 5%;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:22px;font-weight:900;color:#855300}.logo span{display:block;font-size:10px;color:#8b7964;font-weight:600}
-nav{display:flex;gap:22px;font-size:14px}.navbtn{background:#855300;color:#fff;padding:10px 15px;border-radius:9px;font-weight:700}
-.hero{max-width:1180px;margin:auto;padding:55px 5%;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
-.tag{display:inline-block;background:#f2dfb5;color:#704600;padding:7px 12px;border-radius:30px;font-size:13px;font-weight:700}
-h1{font-size:clamp(37px,6vw,65px);line-height:1.08;margin:16px 0}.hero p{color:#75624e;line-height:1.9;font-size:16px}
-.mainbtn{display:inline-block;background:#855300;color:white;padding:13px 21px;border-radius:10px;font-weight:800;margin-top:8px}
-.heroart{height:330px;border-radius:28px;background:linear-gradient(140deg,#f4df9c,#c27a27);display:flex;align-items:center;justify-content:center;font-size:92px;box-shadow:0 18px 45px #70450020}
-section{max-width:1180px;margin:auto;padding:35px 5%}.heading{text-align:center;margin-bottom:25px}.heading h2{font-size:30px;margin:4px}.heading p{color:#806d58}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:#fff;border:1px solid #eadfcd;border-radius:17px;padding:13px;box-shadow:0 7px 22px #5d3c140d}.photo{height:165px;background:#f8eedb;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:65px}.card h3{margin:12px 3px 4px}.price{font-size:18px;font-weight:900;color:#875300;margin:0 3px 7px}.card button{width:100%;border:0;background:#4b2d14;color:#fff;padding:11px;border-radius:9px;font-weight:800;cursor:pointer}
-.orderbox{background:#fff;border:1px solid #e7d9c3;border-radius:22px;padding:25px;max-width:760px;margin:auto;box-shadow:0 10px 30px #5d3c1410}.orderbox h2{margin-top:0;text-align:center}.notice{text-align:center;color:#765f48;font-size:14px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}input,select,textarea{width:100%;padding:12px;border:1px solid #d9cbb6;border-radius:9px;font:inherit;background:#fff}textarea{min-height:85px;resize:vertical}.full{grid-column:1/-1}.submit{width:100%;margin-top:16px;border:0;background:#855300;color:#fff;padding:14px;border-radius:10px;font-size:16px;font-weight:900;cursor:pointer}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{text-align:center;background:#fff;border:1px solid #eadfcd;border-radius:15px;padding:20px}.feature b{display:block;margin:7px}
-footer{background:#29190c;color:#eee;text-align:center;padding:28px 5%;margin-top:30px;font-size:13px}
-@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;padding-top:35px}.products{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.heroart{height:250px}}
-@media(max-width:430px){.products{gap:9px}.card{padding:9px}.photo{height:125px;font-size:54px}.card h3{font-size:15px}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.order-section{padding:30px 16px 50px}
-.order-box{max-width:560px;margin:auto;background:#fff;border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.order-box h2{text-align:center;margin:0 0 18px}
-.selected-product{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#f6f8f2;border-radius:14px;padding:15px;margin-bottom:12px}
-.selected-name{font-weight:700;font-size:18px}
-.selected-price{margin-top:4px}
-.qty{display:flex;align-items:center;gap:9px}
-.qty button{width:38px;height:38px;border:0;border-radius:10px;background:#e8efdf;font-size:24px;cursor:pointer}
-.qty span{min-width:24px;text-align:center;font-weight:700}
-.total-row{display:flex;justify-content:space-between;font-size:18px;padding:10px 2px 16px;border-bottom:1px solid #eee;margin-bottom:15px}
-#orderForm{display:grid;gap:12px}
-#orderForm input,#orderForm textarea{width:100%;box-sizing:border-box;border:1px solid #ddd;border-radius:11px;padding:13px;font-size:16px;outline:none}
-#orderForm textarea{min-height:90px;resize:vertical}
-.confirm-btn{border:0;border-radius:11px;padding:14px;font-size:17px;font-weight:700;cursor:pointer}
-</style>
+  <title>প্রকৃতির স্বাদ — প্রাকৃতিক খাবারের দোকান</title>
+
+  <meta name="description" content="প্রকৃতির স্বাদ — খাঁটি মধু, হানিনাট, কাজুবাদাম, কাঠবাদাম, খেজুর, খেজুরের গুড় ও প্রাকৃতিক খাবার।">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans Bengali", sans-serif;
+      background: #fffaf0;
+      color: #3b2415;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,250,240,.97);
+      border-bottom: 1px solid #ead7b4;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      min-height: 72px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      color: #7b451d;
+    }
+
+    .logo span {
+      color: #c48a2c;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #b06f1c;
+    }
+
+    .nav-order {
+      background: #8b531f;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 25px;
+      font-weight: 800;
+    }
+
+    .hero {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 18px 55px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.12;
+      color: #603713;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #b77720;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #6d5848;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #8b531f;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 30px;
+      font-weight: 800;
+      box-shadow: 0 8px 25px rgba(100,55,15,.18);
+    }
+
+    .hero-art {
+      min-height: 300px;
+      border-radius: 35px;
+      background:
+        radial-gradient(circle at 30% 25%, #ffe7a7, transparent 28%),
+        radial-gradient(circle at 70% 70%, #e9bd70, transparent 30%),
+        linear-gradient(135deg, #fff0c9, #dca85e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 125px;
+      box-shadow: 0 20px 50px rgba(90,50,10,.15);
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 18px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #603713;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #806d5c;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eadcc5;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(70,40,10,.07);
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(70,40,10,.12);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 205px;
+      background: #f5e7ca;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-placeholder {
+      font-size: 75px;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card h3 {
+      color: #4f2d17;
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .card p {
+      color: #806d5c;
+      font-size: 14px;
+      min-height: 45px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 22px;
+      color: #a56319;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .order-product-btn {
+      width: 100%;
+      border: none;
+      background: #8b531f;
+      color: white;
+      padding: 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .order-product-btn:hover {
+      background: #6f4017;
+    }
+
+    .loading,
+    .empty,
+    .error-box {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 35px 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid #eadcc5;
+    }
+
+    .error-box {
+      color: #9a321f;
+    }
+
+    .order-section {
+      background: #f7ecd7;
+      max-width: none;
+    }
+
+    .order-inner {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .order-box {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 15px 40px rgba(70,40,10,.09);
+    }
+
+    .selected-product {
+      background: #fff7e7;
+      border: 1px solid #ecd6aa;
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .selected-product strong {
+      color: #603713;
+      font-size: 19px;
+    }
+
+    .qty-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 18px 0;
+      padding: 14px;
+      background: #fffaf2;
+      border-radius: 14px;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .qty-controls button {
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: #8b531f;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    #qty {
+      min-width: 25px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eadcc5;
+      padding-top: 17px;
+      margin: 18px 0;
+      font-size: 22px;
+      font-weight: 900;
+      color: #7b451d;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #ddc9a8;
+      border-radius: 12px;
+      padding: 13px;
+      outline: none;
+      background: #fffdf9;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #b77a29;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      padding: 15px;
+      border-radius: 14px;
+      background: #8b531f;
+      color: white;
+      font-weight: 900;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .submit-btn:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 18px;
+      padding: 17px;
+      border-radius: 13px;
+      background: #e8f7df;
+      color: #28611e;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid #eadcc5;
+      text-align: center;
+    }
+
+    .why-card .icon {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .why-card h3 {
+      color: #603713;
+      margin-bottom: 7px;
+    }
+
+    .why-card p {
+      color: #806d5c;
+    }
+
+    footer {
+      background: #4b2c18;
+      color: #f8e9d1;
+      text-align: center;
+      padding: 35px 18px;
+    }
+
+    footer strong {
+      color: #f2c477;
+    }
+
+    @media (max-width: 900px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 230px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      .nav-order {
+        padding: 8px 13px;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 160px;
+      }
+
+      .card-body {
+        padding: 13px;
+      }
+
+      .card h3 {
+        font-size: 17px;
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+
+      .price {
+        font-size: 19px;
+      }
+
+      .order-box {
+        padding: 18px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="top">🌿 খাঁটি স্বাদ • যত্নে বাছাই করা প্রাকৃতিক খাবার</div>
+
 <header>
-<a class="logo" href="#">প্রকৃতির স্বাদ<span>প্রাকৃতিক খাবারের অনলাইন দোকান</span></a>
-<nav><a href="#products">পণ্যসমূহ</a><a href="#order">অর্ডার করুন</a><a href="#why">কেন আমরা</a></nav>
-<a class="navbtn" href="#order">অর্ডার করুন</a>
+  <div class="nav">
+    <a href="#" class="logo">প্রকৃতির <span>স্বাদ</span></a>
+
+    <nav class="nav-links">
+      <a href="#products">পণ্য</a>
+      <a href="#order">অর্ডার</a>
+      <a href="#why">কেন আমরা</a>
+    </nav>
+
+    <a href="#order" class="nav-order">অর্ডার করুন</a>
+  </div>
 </header>
 
-<section class="hero">
-<div>
-<span class="tag">প্রাকৃতিক খাবারের বিশ্বস্ত ঠিকানা</span>
-<h1>প্রকৃতির স্বাদ<br>এখন আপনার ঘরে</h1>
-<p>মধু, হানিনাট, কাজুবাদাম, কাঠবাদাম, খেজুর ও খেজুরের গুড়সহ পছন্দের খাবার সহজেই অর্ডার করুন।</p>
-<a class="mainbtn" href="#products">পণ্য দেখুন ↓</a>
-</div>
-<div class="heroart">🍯 🥜 🌴</div>
-</section>
+<main>
 
-<section id="products">
-<div class="heading"><h2>আমাদের পণ্য</h2><p>পছন্দের পণ্যটি বেছে নিয়ে নিচে অর্ডার করুন</p></div>
-<div class="products">
-<div class="card"><div class="photo">🍯</div><h3>খাঁটি মধু</h3><p class="price">৳ ৬৫০</p><button data-product="খাঁটি মধু" data-price="৬৫০" onclick="choose('খাঁটি মধু')">অর্ডার করুন</button></div>
-<div class="card"><div class="photo">🥜</div><h3>হানিনাট</h3><p class="price">৳ ৫৫০</p><button onclick="choose('হানিনাট')">অর্ডার করুন</button></div>
-<div class="card"><div class="photo">🌰</div><h3>কাজুবাদাম</h3><p class="price">৳ ৭৫০</p><button onclick="choose('কাজুবাদাম')">অর্ডার করুন</button></div>
-<div class="card"><div class="photo">🥜</div><h3>কাঠবাদাম</h3><p class="price">৳ ৭০০</p><button onclick="choose('কাঠবাদাম')">অর্ডার করুন</button></div>
-<div class="card"><div class="photo">🌴</div><h3>খেজুরের গুড়</h3><p class="price">৳ ৪৫০</p><button onclick="choose('খেজুরের গুড়')">অর্ডার করুন</button></div>
-<div class="card"><div class="photo">🍇</div><h3>খেজুর</h3><p class="price">৳ ৫০০</p><button onclick="choose('খেজুর')">অর্ডার করুন</button></div>
-<div class="card"><div class="photo">🥜</div><h3>মিক্সড নাটস</h3><p class="price">৳ ৬৫০</p><button onclick="choose('মিক্সড নাটস')">অর্ডার করুন</button></div>
-<div class="card"><div class="photo">🍃</div><h3>প্রাকৃতিক খাবার</h3><p class="price">৳ ৪০০ থেকে</p><button onclick="choose('প্রাকৃতিক খাবার')">অর্ডার করুন</button></div>
-</div>
-</section>
+  <section class="hero">
+    <div>
+      <h1>প্রকৃতির স্বাদ<br><span>এখন আপনার ঘরে</span></h1>
 
+      <p>
+        খাঁটি ও প্রাকৃতিক খাবারের স্বাদ পৌঁছে যাবে আপনার ঘরের দরজায়।
+        ভালোবাসা দিয়ে বাছাই করা মানসম্মত পণ্য।
+      </p>
 
-<section id="order" class="order-section">
-  <div class="order-box">
-    <h2>অর্ডার করুন</h2>
-    <div id="selectedProduct" class="selected-product">
-      <div>
-        <div class="selected-name">পণ্য নির্বাচন করুন</div>
-        <div class="selected-price">—</div>
-      </div>
-      <div class="qty">
-        <button type="button" id="minus">−</button>
-        <span id="qty">1</span>
-        <button type="button" id="plus">+</button>
-      </div>
+      <a href="#products" class="hero-btn">পণ্য দেখুন →</a>
     </div>
 
-    <div class="total-row">
-      <span>মোট মূল্য</span>
-      <strong id="total">৳ ০</strong>
+    <div class="hero-art">
+      🍯🥜🌴
+    </div>
+  </section>
+
+
+  <section id="products">
+
+    <div class="section-title">
+      <h2>আমাদের পণ্য</h2>
+      <p>আপনার পছন্দের প্রাকৃতিক খাবার বেছে নিন</p>
     </div>
 
-    <form id="orderForm">
-      <input id="name" type="text" placeholder="আপনার নাম" required>
-      <input id="phone" type="tel" placeholder="ফোন নাম্বার" required>
-      <textarea id="address" placeholder="সম্পূর্ণ ঠিকানা" required></textarea>
-      <button type="submit" class="confirm-btn">অর্ডার কনফার্ম করুন</button>
-    </form>
-  </div>
-</section>
+    <div class="products" id="productsGrid">
+      <div class="loading">পণ্য লোড হচ্ছে...</div>
+    </div>
+
+  </section>
 
 
-<section id="why">
-<div class="heading"><h2>কেন আমাদের থেকে কিনবেন?</h2></div>
-<div class="features">
-<div class="feature">🌿<b>বাছাই করা পণ্য</b><span>যত্নের সঙ্গে পণ্য নির্বাচন করা হয়।</span></div>
-<div class="feature">📦<b>হোম ডেলিভারি</b><span>অর্ডার করে ঘরে বসেই পণ্য গ্রহণ করুন।</span></div>
-<div class="feature">💬<b>সহজ অর্ডার</b><span>নাম, ফোন ও ঠিকানা দিয়েই অর্ডার করুন।</span></div>
-</div>
-</section>
+  <section class="order-section" id="order">
 
-<footer>© ২০২৬ প্রকৃতির স্বাদ • সর্বস্বত্ব সংরক্ষিত</footer>
+    <div class="order-inner">
 
+      <div class="section-title">
+        <h2>অর্ডার করুন</h2>
+        <p>আপনার তথ্য দিয়ে অর্ডারটি সম্পন্ন করুন</p>
+      </div>
+
+      <div class="order-box">
+
+        <div class="selected-product">
+          <div>
+            <small>নির্বাচিত পণ্য</small><br>
+            <strong id="selectedName">কোনো পণ্য নির্বাচন করুন</strong>
+          </div>
+
+          <strong id="selectedPrice">৳ ০</strong>
+        </div>
+
+
+        <div class="qty-box">
+
+          <strong>পরিমাণ</strong>
+
+          <div class="qty-controls">
+            <button type="button" id="minusBtn">−</button>
+            <span id="qty">1</span>
+            <button type="button" id="plusBtn">+</button>
+          </div>
+
+        </div>
+
+
+        <div class="total">
+          <span>মোট</span>
+          <span id="total">৳ ০</span>
+        </div>
+
+
+        <form id="orderForm">
+
+          <div class="form-group">
+            <label for="customerName">আপনার নাম</label>
+            <input
+              type="text"
+              id="customerName"
+              placeholder="আপনার নাম লিখুন"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">মোবাইল নম্বর</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="01XXXXXXXXX"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="address">ডেলিভারি ঠিকানা</label>
+            <textarea
+              id="address"
+              placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            অর্ডার কনফার্ম করুন
+          </button>
+
+        </form>
+
+        <div class="success-message" id="successMessage">
+          ✅ আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে।
+          <br>
+          খুব শিগগিরই আমরা আপনার সাথে যোগাযোগ করব।
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="why">
+
+    <div class="section-title">
+      <h2>কেন প্রকৃতির স্বাদ?</h2>
+      <p>মান ও বিশ্বাস—দুটোকেই আমরা গুরুত্ব দিই</p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="icon">🌿</div>
+        <h3>প্রাকৃতিক পণ্য</h3>
+        <p>প্রাকৃতিক ও মানসম্মত খাবার বাছাই করে আপনাদের কাছে পৌঁছে দিই।</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">📦</div>
+        <h3>নিরাপদ প্যাকেজিং</h3>
+        <p>পণ্য নিরাপদে প্যাক করে ডেলিভারির জন্য প্রস্তুত করা হয়।</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">❤️</div>
+        <h3>বিশ্বাসের সাথে</h3>
+        <p>প্রতিটি অর্ডারকে আমরা গুরুত্বের সাথে পরিচালনা করি।</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <strong>প্রকৃতির স্বাদ</strong>
+  <br>
+  প্রাকৃতিক খাবারের বিশ্বস্ত ঠিকানা
+  <br><br>
+  © 2026 প্রকৃতির স্বাদ — সর্বস্বত্ব সংরক্ষিত
+</footer>
+
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-(function(){
-  const productButtons = document.querySelectorAll('.product-card button, .product button, [data-product]');
-  const selectedName = document.querySelector('.selected-name');
-  const selectedPrice = document.querySelector('.selected-price');
-  const qtyEl = document.getElementById('qty');
-  const totalEl = document.getElementById('total');
-  const minus = document.getElementById('minus');
-  const plus = document.getElementById('plus');
-  const form = document.getElementById('orderForm');
-  let currentName = '';
-  let currentPrice = 0;
+
+  const SUPABASE_URL =
+    "https://zerdbrktvcklzizopfsd.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_VMRbGWXZj1BdFYrflBg9dg_sqGdkn-S";
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+  let products = [];
+  let currentProduct = null;
   let quantity = 1;
 
-  function bn(n){ return String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]); }
-  function update(){
-    selectedName.textContent = currentName || 'পণ্য নির্বাচন করুন';
-    selectedPrice.textContent = currentPrice ? 'প্রতি পিস: ৳ ' + bn(currentPrice) : '—';
-    qtyEl.textContent = bn(quantity);
-    totalEl.textContent = currentPrice ? '৳ ' + bn(currentPrice * quantity) : '৳ ০';
+
+  const productsGrid =
+    document.getElementById("productsGrid");
+
+  const selectedName =
+    document.getElementById("selectedName");
+
+  const selectedPrice =
+    document.getElementById("selectedPrice");
+
+  const qtyElement =
+    document.getElementById("qty");
+
+  const totalElement =
+    document.getElementById("total");
+
+  const orderForm =
+    document.getElementById("orderForm");
+
+  const submitBtn =
+    document.getElementById("submitBtn");
+
+  const successMessage =
+    document.getElementById("successMessage");
+
+
+  function bn(number) {
+    const digits = "০১২৩৪৫৬৭৮৯";
+
+    return String(number).replace(
+      /\d/g,
+      d => digits[d]
+    );
   }
-  function choose(name, price){
-    currentName = name;
-    currentPrice = Number(price) || 0;
+
+
+  function money(number) {
+    return "৳ " + bn(
+      Number(number || 0).toLocaleString("en-US")
+    );
+  }
+
+
+  function escapeHTML(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+
+  function productEmoji(name) {
+
+    const text = String(name).toLowerCase();
+
+    if (text.includes("মধু")) return "🍯";
+    if (text.includes("কাজু")) return "🥜";
+    if (text.includes("কাঠবাদাম")) return "🌰";
+    if (text.includes("খেজুর")) return "🌴";
+    if (text.includes("নাট")) return "🥜";
+
+    return "🌿";
+  }
+
+
+  async function loadProducts() {
+
+    productsGrid.innerHTML =
+      '<div class="loading">পণ্য লোড হচ্ছে...</div>';
+
+    const { data, error } =
+      await supabaseClient
+        .from("products")
+        .select(`
+          id,
+          name,
+          price,
+          image_url,
+          description,
+          stock,
+          is_active
+        `)
+        .eq("is_active", true)
+        .order("id", {
+          ascending: false
+        });
+
+
+    if (error) {
+
+      console.error(error);
+
+      productsGrid.innerHTML = `
+        <div class="error-box">
+          পণ্য লোড করা যাচ্ছে না।<br>
+          কিছুক্ষণ পরে আবার চেষ্টা করুন।
+        </div>
+      `;
+
+      return;
+    }
+
+
+    products = data || [];
+
+
+    if (!products.length) {
+
+      productsGrid.innerHTML = `
+        <div class="empty">
+          এখনো কোনো পণ্য যোগ করা হয়নি।
+        </div>
+      `;
+
+      return;
+    }
+
+
+    productsGrid.innerHTML =
+      products.map(product => {
+
+        const image = product.image_url
+          ? `
+            <img
+              src="${escapeHTML(product.image_url)}"
+              alt="${escapeHTML(product.name)}"
+            >
+          `
+          : `
+            <div class="product-placeholder">
+              ${productEmoji(product.name)}
+            </div>
+          `;
+
+
+        const description =
+          product.description ||
+          "প্রাকৃতিক ও মানসম্মত পণ্য";
+
+
+        return `
+          <div class="card">
+
+            <div class="product-image">
+              ${image}
+            </div>
+
+            <div class="card-body">
+
+              <h3>
+                ${escapeHTML(product.name)}
+              </h3>
+
+              <p>
+                ${escapeHTML(description)}
+              </p>
+
+              <div class="price">
+                ${money(product.price)}
+              </div>
+
+              <button
+                class="order-product-btn"
+                type="button"
+                data-product-id="${product.id}"
+              >
+                অর্ডার করুন
+              </button>
+
+            </div>
+
+          </div>
+        `;
+
+      }).join("");
+
+
+    document
+      .querySelectorAll("[data-product-id]")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const id =
+              Number(button.dataset.productId);
+
+            const product =
+              products.find(
+                item => Number(item.id) === id
+              );
+
+            if (product) {
+              chooseProduct(product);
+            }
+
+          }
+        );
+
+      });
+
+  }
+
+
+  function chooseProduct(product) {
+
+    currentProduct = product;
     quantity = 1;
-    update();
-    document.getElementById('order').scrollIntoView({behavior:'smooth', block:'center'});
+
+    selectedName.textContent =
+      product.name;
+
+    selectedPrice.textContent =
+      money(product.price);
+
+    qtyElement.textContent =
+      bn(quantity);
+
+    updateTotal();
+
+
+    document
+      .getElementById("order")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
   }
 
-  productButtons.forEach(btn => {
-    btn.addEventListener('click', function(){
-      const card = this.closest('.product-card, .product');
-      const name = this.dataset.product || (card && card.querySelector('h3,h2,.product-name')?.textContent.trim());
-      const priceText = this.dataset.price || (card && card.querySelector('.price,.product-price')?.textContent) || '';
-      const price = priceText.replace(/[^\d]/g,'');
-      if(name && price) choose(name, price);
+
+  function updateTotal() {
+
+    const price =
+      currentProduct
+        ? Number(currentProduct.price)
+        : 0;
+
+    const total =
+      price * quantity;
+
+    totalElement.textContent =
+      money(total);
+
+    qtyElement.textContent =
+      bn(quantity);
+
+  }
+
+
+  document
+    .getElementById("minusBtn")
+    .addEventListener("click", () => {
+
+      if (quantity > 1) {
+        quantity--;
+        updateTotal();
+      }
+
     });
-  });
 
-  minus.addEventListener('click', ()=>{ if(quantity>1){quantity--;update();} });
-  plus.addEventListener('click', ()=>{ quantity++;update(); });
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!currentName){ alert('আগে একটি পণ্য নির্বাচন করুন।'); return; }
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const address = document.getElementById('address').value.trim();
-    alert('অর্ডার কনফার্ম হয়েছে!\\n\\nপণ্য: '+currentName+'\\nপরিমাণ: '+quantity+'\\nমোট: ৳ '+(currentPrice*quantity)+'\\nনাম: '+name+'\\nফোন: '+phone+'\\nঠিকানা: '+address);
-  });
-  update();
-})();
+  document
+    .getElementById("plusBtn")
+    .addEventListener("click", () => {
+
+      if (quantity < 99) {
+        quantity++;
+        updateTotal();
+      }
+
+    });
+
+
+  orderForm.addEventListener(
+    "submit",
+    async event => {
+
+      event.preventDefault();
+
+
+      if (!currentProduct) {
+
+        alert(
+          "প্রথমে একটি পণ্য নির্বাচন করুন।"
+        );
+
+        document
+          .getElementById("products")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+        return;
+      }
+
+
+      const customerName =
+        document
+          .getElementById("customerName")
+          .value
+          .trim();
+
+
+      const phone =
+        document
+          .getElementById("phone")
+          .value
+          .trim();
+
+
+      const address =
+        document
+          .getElementById("address")
+          .value
+          .trim();
+
+
+      const totalAmount =
+        Number(currentProduct.price) *
+        quantity;
+
+
+      submitBtn.disabled = true;
+
+      submitBtn.textContent =
+        "অর্ডার পাঠানো হচ্ছে...";
+
+
+      const orderData = {
+
+        customer_name: customerName,
+
+        phone: phone,
+
+        address: address,
+
+        items: [
+          {
+            product_id: currentProduct.id,
+            name: currentProduct.name,
+            price: Number(currentProduct.price),
+            quantity: quantity
+          }
+        ],
+
+        total_amount: totalAmount,
+
+        status: "pending"
+
+      };
+
+
+      const { error } =
+        await supabaseClient
+          .from("orders")
+          .insert(orderData);
+
+
+      if (error) {
+
+        console.error(error);
+
+        alert(
+          "অর্ডার পাঠানো যায়নি। আবার চেষ্টা করুন।"
+        );
+
+        submitBtn.disabled = false;
+
+        submitBtn.textContent =
+          "অর্ডার কনফার্ম করুন";
+
+        return;
+      }
+
+
+      successMessage.style.display =
+        "block";
+
+
+      orderForm.reset();
+
+
+      currentProduct = null;
+
+      quantity = 1;
+
+
+      selectedName.textContent =
+        "কোনো পণ্য নির্বাচন করুন";
+
+      selectedPrice.textContent =
+        "৳ ০";
+
+      qtyElement.textContent =
+        "১";
+
+      totalElement.textContent =
+        "৳ ০";
+
+
+      submitBtn.disabled = false;
+
+      submitBtn.textContent =
+        "অর্ডার কনফার্ম করুন";
+
+
+      setTimeout(() => {
+
+        successMessage.style.display =
+          "none";
+
+      }, 8000);
+
+    }
+  );
+
+
+  loadProducts();
+
 </script>
 
 </body>
