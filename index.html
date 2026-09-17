@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>প্রকৃতির স্বাদ — প্রাকৃতিক খাবারের দোকান</title>
+<meta name="description" content="মধু, হানিনাট, কাজুবাদাম, কাঠবাদাম, খেজুর ও খেজুরের গুড়ের অনলাইন দোকান।">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans Bengali",system-ui,sans-serif;background:#fffaf2;color:#332316}
+.top{background:#4b2d14;color:#fff;padding:8px;text-align:center;font-size:13px}
+header{background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid #eee2d0;padding:13px 5%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:900;color:#855300}.logo span{display:block;font-size:10px;color:#8b7964;font-weight:600}
+nav{display:flex;gap:22px;font-size:14px}.navbtn{background:#855300;color:#fff;padding:10px 15px;border-radius:9px;font-weight:700}
+.hero{max-width:1180px;margin:auto;padding:55px 5%;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.tag{display:inline-block;background:#f2dfb5;color:#704600;padding:7px 12px;border-radius:30px;font-size:13px;font-weight:700}
+h1{font-size:clamp(37px,6vw,65px);line-height:1.08;margin:16px 0}.hero p{color:#75624e;line-height:1.9;font-size:16px}
+.mainbtn{display:inline-block;background:#855300;color:white;padding:13px 21px;border-radius:10px;font-weight:800;margin-top:8px}
+.heroart{height:330px;border-radius:28px;background:linear-gradient(140deg,#f4df9c,#c27a27);display:flex;align-items:center;justify-content:center;font-size:92px;box-shadow:0 18px 45px #70450020}
+section{max-width:1180px;margin:auto;padding:35px 5%}.heading{text-align:center;margin-bottom:25px}.heading h2{font-size:30px;margin:4px}.heading p{color:#806d58}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:#fff;border:1px solid #eadfcd;border-radius:17px;padding:13px;box-shadow:0 7px 22px #5d3c140d}.photo{height:165px;background:#f8eedb;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:65px}.card h3{margin:12px 3px 4px}.price{font-size:18px;font-weight:900;color:#875300;margin:0 3px 7px}.card button{width:100%;border:0;background:#4b2d14;color:#fff;padding:11px;border-radius:9px;font-weight:800;cursor:pointer}
+.orderbox{background:#fff;border:1px solid #e7d9c3;border-radius:22px;padding:25px;max-width:760px;margin:auto;box-shadow:0 10px 30px #5d3c1410}.orderbox h2{margin-top:0;text-align:center}.notice{text-align:center;color:#765f48;font-size:14px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}input,select,textarea{width:100%;padding:12px;border:1px solid #d9cbb6;border-radius:9px;font:inherit;background:#fff}textarea{min-height:85px;resize:vertical}.full{grid-column:1/-1}.submit{width:100%;margin-top:16px;border:0;background:#855300;color:#fff;padding:14px;border-radius:10px;font-size:16px;font-weight:900;cursor:pointer}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{text-align:center;background:#fff;border:1px solid #eadfcd;border-radius:15px;padding:20px}.feature b{display:block;margin:7px}
+footer{background:#29190c;color:#eee;text-align:center;padding:28px 5%;margin-top:30px;font-size:13px}
+@media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;padding-top:35px}.products{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.heroart{height:250px}}
+@media(max-width:430px){.products{gap:9px}.card{padding:9px}.photo{height:125px;font-size:54px}.card h3{font-size:15px}}
+
+.order-section{padding:30px 16px 50px}
+.order-box{max-width:560px;margin:auto;background:#fff;border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.order-box h2{text-align:center;margin:0 0 18px}
+.selected-product{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#f6f8f2;border-radius:14px;padding:15px;margin-bottom:12px}
+.selected-name{font-weight:700;font-size:18px}
+.selected-price{margin-top:4px}
+.qty{display:flex;align-items:center;gap:9px}
+.qty button{width:38px;height:38px;border:0;border-radius:10px;background:#e8efdf;font-size:24px;cursor:pointer}
+.qty span{min-width:24px;text-align:center;font-weight:700}
+.total-row{display:flex;justify-content:space-between;font-size:18px;padding:10px 2px 16px;border-bottom:1px solid #eee;margin-bottom:15px}
+#orderForm{display:grid;gap:12px}
+#orderForm input,#orderForm textarea{width:100%;box-sizing:border-box;border:1px solid #ddd;border-radius:11px;padding:13px;font-size:16px;outline:none}
+#orderForm textarea{min-height:90px;resize:vertical}
+.confirm-btn{border:0;border-radius:11px;padding:14px;font-size:17px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="top">🌿 খাঁটি স্বাদ • যত্নে বাছাই করা প্রাকৃতিক খাবার</div>
+<header>
+<a class="logo" href="#">প্রকৃতির স্বাদ<span>প্রাকৃতিক খাবারের অনলাইন দোকান</span></a>
+<nav><a href="#products">পণ্যসমূহ</a><a href="#order">অর্ডার করুন</a><a href="#why">কেন আমরা</a></nav>
+<a class="navbtn" href="#order">অর্ডার করুন</a>
+</header>
+
+<section class="hero">
+<div>
+<span class="tag">প্রাকৃতিক খাবারের বিশ্বস্ত ঠিকানা</span>
+<h1>প্রকৃতির স্বাদ<br>এখন আপনার ঘরে</h1>
+<p>মধু, হানিনাট, কাজুবাদাম, কাঠবাদাম, খেজুর ও খেজুরের গুড়সহ পছন্দের খাবার সহজেই অর্ডার করুন।</p>
+<a class="mainbtn" href="#products">পণ্য দেখুন ↓</a>
+</div>
+<div class="heroart">🍯 🥜 🌴</div>
+</section>
+
+<section id="products">
+<div class="heading"><h2>আমাদের পণ্য</h2><p>পছন্দের পণ্যটি বেছে নিয়ে নিচে অর্ডার করুন</p></div>
+<div class="products">
+<div class="card"><div class="photo">🍯</div><h3>খাঁটি মধু</h3><p class="price">৳ ৬৫০</p><button data-product="খাঁটি মধু" data-price="৬৫০" onclick="choose('খাঁটি মধু')">অর্ডার করুন</button></div>
+<div class="card"><div class="photo">🥜</div><h3>হানিনাট</h3><p class="price">৳ ৫৫০</p><button onclick="choose('হানিনাট')">অর্ডার করুন</button></div>
+<div class="card"><div class="photo">🌰</div><h3>কাজুবাদাম</h3><p class="price">৳ ৭৫০</p><button onclick="choose('কাজুবাদাম')">অর্ডার করুন</button></div>
+<div class="card"><div class="photo">🥜</div><h3>কাঠবাদাম</h3><p class="price">৳ ৭০০</p><button onclick="choose('কাঠবাদাম')">অর্ডার করুন</button></div>
+<div class="card"><div class="photo">🌴</div><h3>খেজুরের গুড়</h3><p class="price">৳ ৪৫০</p><button onclick="choose('খেজুরের গুড়')">অর্ডার করুন</button></div>
+<div class="card"><div class="photo">🍇</div><h3>খেজুর</h3><p class="price">৳ ৫০০</p><button onclick="choose('খেজুর')">অর্ডার করুন</button></div>
+<div class="card"><div class="photo">🥜</div><h3>মিক্সড নাটস</h3><p class="price">৳ ৬৫০</p><button onclick="choose('মিক্সড নাটস')">অর্ডার করুন</button></div>
+<div class="card"><div class="photo">🍃</div><h3>প্রাকৃতিক খাবার</h3><p class="price">৳ ৪০০ থেকে</p><button onclick="choose('প্রাকৃতিক খাবার')">অর্ডার করুন</button></div>
+</div>
+</section>
+
+
+<section id="order" class="order-section">
+  <div class="order-box">
+    <h2>অর্ডার করুন</h2>
+    <div id="selectedProduct" class="selected-product">
+      <div>
+        <div class="selected-name">পণ্য নির্বাচন করুন</div>
+        <div class="selected-price">—</div>
+      </div>
+      <div class="qty">
+        <button type="button" id="minus">−</button>
+        <span id="qty">1</span>
+        <button type="button" id="plus">+</button>
+      </div>
+    </div>
+
+    <div class="total-row">
+      <span>মোট মূল্য</span>
+      <strong id="total">৳ ০</strong>
+    </div>
+
+    <form id="orderForm">
+      <input id="name" type="text" placeholder="আপনার নাম" required>
+      <input id="phone" type="tel" placeholder="ফোন নাম্বার" required>
+      <textarea id="address" placeholder="সম্পূর্ণ ঠিকানা" required></textarea>
+      <button type="submit" class="confirm-btn">অর্ডার কনফার্ম করুন</button>
+    </form>
+  </div>
+</section>
+
+
+<section id="why">
+<div class="heading"><h2>কেন আমাদের থেকে কিনবেন?</h2></div>
+<div class="features">
+<div class="feature">🌿<b>বাছাই করা পণ্য</b><span>যত্নের সঙ্গে পণ্য নির্বাচন করা হয়।</span></div>
+<div class="feature">📦<b>হোম ডেলিভারি</b><span>অর্ডার করে ঘরে বসেই পণ্য গ্রহণ করুন।</span></div>
+<div class="feature">💬<b>সহজ অর্ডার</b><span>নাম, ফোন ও ঠিকানা দিয়েই অর্ডার করুন।</span></div>
+</div>
+</section>
+
+<footer>© ২০২৬ প্রকৃতির স্বাদ • সর্বস্বত্ব সংরক্ষিত</footer>
+
+
+<script>
+(function(){
+  const productButtons = document.querySelectorAll('.product-card button, .product button, [data-product]');
+  const selectedName = document.querySelector('.selected-name');
+  const selectedPrice = document.querySelector('.selected-price');
+  const qtyEl = document.getElementById('qty');
+  const totalEl = document.getElementById('total');
+  const minus = document.getElementById('minus');
+  const plus = document.getElementById('plus');
+  const form = document.getElementById('orderForm');
+  let currentName = '';
+  let currentPrice = 0;
+  let quantity = 1;
+
+  function bn(n){ return String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]); }
+  function update(){
+    selectedName.textContent = currentName || 'পণ্য নির্বাচন করুন';
+    selectedPrice.textContent = currentPrice ? 'প্রতি পিস: ৳ ' + bn(currentPrice) : '—';
+    qtyEl.textContent = bn(quantity);
+    totalEl.textContent = currentPrice ? '৳ ' + bn(currentPrice * quantity) : '৳ ০';
+  }
+  function choose(name, price){
+    currentName = name;
+    currentPrice = Number(price) || 0;
+    quantity = 1;
+    update();
+    document.getElementById('order').scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  productButtons.forEach(btn => {
+    btn.addEventListener('click', function(){
+      const card = this.closest('.product-card, .product');
+      const name = this.dataset.product || (card && card.querySelector('h3,h2,.product-name')?.textContent.trim());
+      const priceText = this.dataset.price || (card && card.querySelector('.price,.product-price')?.textContent) || '';
+      const price = priceText.replace(/[^\d]/g,'');
+      if(name && price) choose(name, price);
+    });
+  });
+
+  minus.addEventListener('click', ()=>{ if(quantity>1){quantity--;update();} });
+  plus.addEventListener('click', ()=>{ quantity++;update(); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!currentName){ alert('আগে একটি পণ্য নির্বাচন করুন।'); return; }
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    alert('অর্ডার কনফার্ম হয়েছে!\\n\\nপণ্য: '+currentName+'\\nপরিমাণ: '+quantity+'\\nমোট: ৳ '+(currentPrice*quantity)+'\\nনাম: '+name+'\\nফোন: '+phone+'\\nঠিকানা: '+address);
+  });
+  update();
+})();
+</script>
+
+</body>
+</html>
